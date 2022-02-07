@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="sbt 1" modules="imdb-spark_6529" />
+    <profile name="sbt 2" modules="hw2">
+      <option name="deprecationWarnings" value="true" />
+    </profile>
+  </component>
+</project>

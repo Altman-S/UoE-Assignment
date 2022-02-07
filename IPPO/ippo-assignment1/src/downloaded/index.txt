@@ -1,0 +1,7 @@
+# download from http://35.178.204.69/munros/index.html
+# License: Free for commercial use (Do not redistribute)
+Beinn a' Bheithir.jpg: Beinn a' Bheithir
+Ben Lomond.jpg: Ben Lomond
+Benhui.jpg: Benhui
+Lochnagar.jpg: Lochnagar
+Schiehallion.jpg: Schiehallion

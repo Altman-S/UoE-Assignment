@@ -1,0 +1,6 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/src/main/resources/imdb,/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/target/scala-2.12/classes/imdb)[0m
+[0m[[0mdebug[0m] [0m	(/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/src/main/resources/imdb/title.ratings.tsv,/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/target/scala-2.12/classes/imdb/title.ratings.tsv)[0m
+[0m[[0mdebug[0m] [0m	(/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/src/main/resources/imdb/name.basics.tsv,/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/target/scala-2.12/classes/imdb/name.basics.tsv)[0m
+[0m[[0mdebug[0m] [0m	(/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/src/main/resources/imdb/title.basics.tsv,/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/target/scala-2.12/classes/imdb/title.basics.tsv)[0m
+[0m[[0mdebug[0m] [0m	(/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/src/main/resources/imdb/title.crew.tsv,/Users/altman/Desktop/Assignment/EC/ec-cw2/imdb-spark/target/scala-2.12/classes/imdb/title.crew.tsv)[0m

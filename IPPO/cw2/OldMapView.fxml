@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ippo.assignment2.Controller">
+   <center>
+      <ImageView fx:id="imageView" fitHeight="414.0" fitWidth="481.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_LEFT" />
+   </center>
+   <top>
+      <HBox prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="32.0" prefWidth="81.0" text="Your position:  " />
+            <Label prefHeight="32.0" prefWidth="58.0" text="Location:" textFill="#d00e0e" />
+            <Label fx:id="labelLocation" prefHeight="32.0" prefWidth="77.0" />
+            <Label prefHeight="32.0" prefWidth="66.0" text="Direction:" textFill="#30d713" />
+            <Label fx:id="labelDirection" prefHeight="32.0" prefWidth="92.0" />
+            <Label fx:id="labelWarning" prefHeight="32.0" prefWidth="217.0" textFill="#dd1919" />
+         </children></HBox>
+   </top>
+   <right>
+      <VBox prefHeight="431.0" prefWidth="116.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="36.0" prefWidth="92.0" text="move Location" textFill="#c92712">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#northLocationClicked" prefHeight="27.0" prefWidth="55.0" text="North">
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </Button>
+            <HBox prefHeight="27.0" prefWidth="125.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#westLocationClicked" prefHeight="27.0" prefWidth="55.0" text="West">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#eastLocationClicked" prefHeight="27.0" prefWidth="55.0" text="East">
+                     <HBox.margin>
+                        <Insets left="6.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#southLocationClicked" prefHeight="27.0" prefWidth="55.0" text="South">
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </Button>
+            <Label prefHeight="22.0" prefWidth="116.0" />
+            <Label prefHeight="21.0" prefWidth="116.0" text="Press button to start" textFill="#c916bd" />
+            <Button mnemonicParsing="false" onAction="#startClicked" text="Start">
+               <VBox.margin>
+                  <Insets left="35.0" />
+               </VBox.margin>
+            </Button>
+            <Label prefHeight="24.0" prefWidth="115.0" />
+            <MenuBar prefHeight="24.0" prefWidth="116.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="move item">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="pick up" />
+                        <MenuItem mnemonicParsing="false" text="put down" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </right>
+   <bottom>
+      <Pane prefHeight="37.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="7.0" layoutY="1.0" prefHeight="35.0" prefWidth="60.0" text="Direction" textFill="#22b556">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Button layoutX="67.0" layoutY="5.0" mnemonicParsing="false" onAction="#northDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="North" />
+            <Button layoutX="123.0" layoutY="5.0" mnemonicParsing="false" onAction="#southDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="South" />
+            <Button layoutX="178.0" layoutY="5.0" mnemonicParsing="false" onAction="#westDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="West" />
+            <Button layoutX="233.0" layoutY="5.0" mnemonicParsing="false" onAction="#eastDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="East" />
+            <Button layoutX="288.0" layoutY="5.0" mnemonicParsing="false" onAction="#downDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="Down" />
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

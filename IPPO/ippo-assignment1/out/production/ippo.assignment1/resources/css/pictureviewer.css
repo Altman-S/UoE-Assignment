@@ -1,0 +1,5 @@
+/* IPPO Assignment 1, default styling */
+#message {
+	-fx-padding: 3;
+    -fx-background-color: white;
+}

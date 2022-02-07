@@ -1,0 +1,2 @@
+sbt test
+scala -version

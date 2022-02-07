@@ -1,0 +1,245 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cleese Assignment
+% Structure Specification File
+% Version 1.0 (27/5/2018)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Author:
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\usepackage{lastpage} % Required to determine the last page number for the footer
+\usepackage{graphicx} % Required to insert images
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\usepackage[most]{tcolorbox} % Required for boxes that split across pages
+\usepackage{booktabs} % Required for better horizontal rules in tables
+\usepackage{listings} % Required for insertion of code
+\usepackage{etoolbox} % Required for if statements
+\usepackage{geometry} % Required for adjusting page dimensions and margins
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{fancyhdr} % Required for customising headers and footers
+\usepackage{xspace}
+\usepackage{booktabs}
+\usepackage[colorlinks]{hyperref}
+\usepackage{etoolbox}
+
+\newcommand{\ie}{i.e.\@\xspace}
+\newcommand{\eg}{e.g.\@\xspace}
+\newcommand{\notemark}[1]{\textcolor{blue}{N.B.\ \emph{#1}}}
+\newcommand{\noteself}[1]{\textcolor{red}{Thought: \emph{#1}}}
+\newcommand{\note}[1]{\emph{\textbf{N.B.}\@\xspace#1}}
+\newcommand{\hint}[1]{\emph{Hint: #1}}
+\newcommand{\half}{$\frac{1}{2}$ }
+
+\newbool{clearnext}		%Running Counter to see if clearing the page or not in the next subquestion.
+\newbool{clearon}		%Parameter for specifying whether we will be clearing or not.
+\newbool{authoron}		%Parameter to specify whether to show author or not
+
+%----------------------------------------------------------------------------------------
+%	Standard Template
+%----------------------------------------------------------------------------------------
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	top=1.3cm, % Top margin
+	bottom=1.0cm, % Bottom margin
+	left=1.2cm, % Left margin
+	right=2.0cm, % Right margin
+	headheight=14pt, % Header height
+	footskip=0.5cm, % Space from the bottom margin to the baseline of the footer
+	headsep=0.2cm, % Space from the top margin to the baseline of the header
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+\pagestyle{fancy} % Enable custom headers and footers
+
+%----------------------------------------------------------------------------------------
+%	My Changes
+%----------------------------------------------------------------------------------------
+\lhead{\small\assignmentClass}
+\chead{}
+\ifbool{authoron}{\rhead{\small{\assignmentAuthorName}}}{\rhead{}}
+
+\lfoot{} % Left footer
+\cfoot{} % Centre footer
+\rfoot{\small Page\ \thepage\ of\ \pageref*{LastPage}} % Right footer
+
+\renewcommand\headrulewidth{0.5pt} % Thickness of the header rule
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+%----------------------------------------------------------------------------------------
+%	MODIFY SECTION STYLES
+%----------------------------------------------------------------------------------------
+
+\usepackage{titlesec} % Required for modifying sections
+
+%------------------------------------------------
+% Section
+
+\titleformat
+{\section} % Section type being modified
+[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+{\Large\bfseries} % Format of the whole section
+{\assignmentQuestionName~\thesection} % Format of the section label
+{6pt} % Space between the title and label
+{} % Code before the label
+
+\titlespacing{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip} % Spacing around section titles, the order is: left, before and after
+
+%------------------------------------------------
+% Subsection
+
+\titleformat
+{\subsection} % Section type being modified
+[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+{} % Format of the whole section
+{\bf{\arabic{section}.\arabic{subsection}}} % Format of the section label
+{4pt} % Space between the title and label
+{} % Code before the label
+
+\titlespacing{\subsection}{0pt}{0.5\baselineskip}{0.5\baselineskip} % Spacing around section titles, the order is: left, before and after
+
+% \renewcommand\thesubsection{(\alph{subsection})}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
+
+
+%----------------------------------------------------------------------------------------
+%	CUSTOM QUESTION COMMANDS/ENVIRONMENTS
+%----------------------------------------------------------------------------------------
+
+% Environment to be used for each question in the assignment
+\newenvironment{question}[1]{
+	\ifbool{clearon}{\clearpage}{}
+	\global\setbool{clearnext}{false}
+	\vspace{0.5\baselineskip} % Whitespace before the question
+	\section{: #1}
+	\lfoot{\small\itshape\assignmentQuestionName~\thesection~continued on next page\ldots} % Set the left footer to state the question continues on the next page, this is reset to nothing if it doesn't (below)
+}{
+	\lfoot{} % Reset the left footer to nothing if the current question does not continue on the next page
+}
+
+%------------------------------------------------
+
+% Environment for inter-subquestion texts (no arguments)
+\newenvironment{interquestiontext}{
+  \ifbool{clearon}{\ifbool{clearnext}{\clearpage}{}}{}
+  \global\setbool{clearnext}{false}
+}{
+}
+
+%------------------------------------------------
+
+
+%------------------------------------------------
+
+% Environment for subquestions, takes 1 argument - the name of the section
+\newenvironment{subquestion}[1]{
+  \ifbool{clearon}{\ifbool{clearnext}{\clearpage}{}}{}
+  \global\setbool{clearnext}{true}
+  \subsection{#1}
+}{
+}
+
+%------------------------------------------------
+
+% Command to print a question sentence
+\newcommand{\questiontext}[1]{
+	\textbf{#1}
+	\vspace{0.5\baselineskip} % Whitespace afterwards
+	\global\setbool{clearnext}{false}
+}
+
+%------------------------------------------------
+% Command to print a  Marking Scheme box.
+\newcommand{\marking}[1]{
+	\begin{tcolorbox}[colback=green!5!white,enhanced]
+		\textbf{Marking Scheme:}#1
+	\end{tcolorbox}
+}
+
+%------------------------------------------------
+
+% Command to print a box that breaks across pages with the space for a student to answer
+\newenvironment{model}[1]{
+\begin{tcolorbox}[enhanced,left=1mm,right=1mm]
+\textbf{Model Answer}:
+#1
+}
+{
+\end{tcolorbox}
+}
+
+\newenvironment{answerbox}[1]{
+\begin{tcolorbox}[enhanced,left=1mm,right=1mm,height=#1]
+}
+{
+\end{tcolorbox}
+}
+
+
+
+%------------------------------------------------
+
+% Command to print an assignment section title to split an assignment into major parts
+\newcommand{\assignmentSection}[1]{
+	{
+		\centering % Centre the section title
+		\vspace{2\baselineskip} % Whitespace before the entire section title
+		
+		\rule{0.8\textwidth}{0.5pt} % Horizontal rule
+		
+		\vspace{0.75\baselineskip} % Whitespace before the section title
+		{\LARGE \MakeUppercase{#1}} % Section title, forced to be uppercase
+		
+		\rule{0.8\textwidth}{0.5pt} % Horizontal rule
+		
+		\vspace{\baselineskip} % Whitespace after the entire section title
+	}
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+	\thispagestyle{empty} 		% Suppress headers and footers
+	\vspace{0.01\textheight} 	% Whitespace before the title
+        % \hfill {\normalsize \it Ver.~1.0.2}\\
+        \hfill {\normalsize \it Ver.~\assignmentDocVersion}\\
+	\textbf{\assignmentClass:\\ \assignmentTitle}\\[4pt]
+	\ifbool{authoron}{\assignmentAuthorName}{
+	\ifdef{\assignmentDueDate}{{\small Due\ on\ \assignmentDueDate}\\}{}
+	{\large \textit{\assignmentWarning}}
+	\vspace{0.01\textheight}} % Whitespace before the author name
+}
+
+\ifbool{authoron}{\author{Student: \textbf{\assignmentAuthorName}}}{}
+\date{} % Don't use the default title page date field
+
+% by Hiroshi
+\usepackage{bm}
+\newcommand{\VEC}[1]{\ensuremath{\bm{#1}}}
+\newcommand{\refQ}[1]{Question~\ref{#1}}
+\hypersetup{linkcolor=blue}
+\hypersetup{urlcolor=black}
+\newcommand{\MGuide}[1]{{\it Marking Guide:} #1}
+\newcommand{\kfold}{$K$-fold\xspace}
+\newcommand{\kmeans}{$k$-means\xspace}
+\newcommand{\SET}[1]{\{#1\}}
+\newcommand{\NARROWITEM}[1][-0.08\baselineskip]{%
+  \setlength{\parskip}{#1}
+  \setlength{\parsep}{0mm}
+  \setlength{\itemsep}{0mm}
+}
+\lstset{upquote=true}

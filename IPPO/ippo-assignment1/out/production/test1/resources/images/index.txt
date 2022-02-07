@@ -1,0 +1,9 @@
+# icons by Pawel Kadysz
+# License: Free for commercial use (Do not redistribute)
+# https://www.iconfinder.com/iconsets/Hand_Drawn_Web_Icon_Set
+Error.png: Error
+Info.png: Info
+Tick.png: Tick
+Cross.png: Cross
+BigTick.png: BigTick
+BigCross.png: BigCross

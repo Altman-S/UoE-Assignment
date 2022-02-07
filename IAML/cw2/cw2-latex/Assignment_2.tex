@@ -1,0 +1,694 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            IAML 2021-22 S1 Assignment 2              %
+%                                                      %
+%                                                      %
+% Authors: Hiroshi Shimodaira and Shuzhuang Xu         %
+% Based on: Assignment 1 by Oisin Mac Aodha, and       %
+%          Octave Mariotti                             %
+% Using template from: Michael P. J. Camilleri and     %
+% Traiko Dinev.                                        %
+%                                                      %
+% Based on the Cleese Assignment Template for Students %
+% from http://www.LaTeXTemplates.com.                  %
+%                                                      %
+% Original Author: Vel (vel@LaTeXTemplates.com)        %
+%                                                      %
+% License:                                             %
+% CC BY-NC-SA 3.0                                      %
+% (http://creativecommons.org/licenses/by-nc-sa/3.0/)  %
+%                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%--------------------------------------------------------
+%   IMPORTANT: Do not touch anything in this part
+\documentclass[12pt]{article}
+\input{style.tex}
+
+
+
+% Options for Formatting Output
+
+\global\setbool{clearon}{true} %
+\global\setbool{authoron}{true} %
+\ifbool{authoron}{\rhead{\small{\assignmentAuthorName}}\cfoot{\small{\assignmentAuthorName}}}{\rhead{}}
+
+
+
+\newcommand{\assignmentDocVersion}{1.0}
+
+\newcommand{\assignmentQuestionName}{Question}
+\newcommand{\assignmentTitle}{Assignment 2}
+
+\newcommand{\assignmentClass}{IAML -- INFR11182 (LEVEL 11)}
+
+\newcommand{\assignmentWarning}{NO LATE SUBMISSIONS} % 
+\newcommand{\assignmentDueDate}{Monday,\ 22 November,\ 2021 @ 16:00}
+%--------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% NOTE: YOU NEED TO ENTER YOUR STUDENT ID BELOW.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% --------------------------------------------------------
+% IMPORTANT: Specify your Student ID below. You will need to uncomment the line, else compilation will fail. Make sure to specify your student ID correctly, otherwise we may not be able to identify your work and you will be marked as missing.
+%\newcommand{\assignmentAuthorName}{s1234567}
+%--------------------------------------------------------
+
+
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%============================================================================%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%
+% Question 1
+%
+\newcommand{\qOneTitle}{Experiments on a binary-classification data set}
+%
+
+  \begin{question}{(80 total points) \qOneTitle}
+
+
+
+
+% \end{question}
+%
+%
+%
+\medskip
+
+% Q1.1
+\begin{subquestion}{(9 points)
+    We want to see how each feature in {\tt Xtrn} is distributed for each class.
+    Since there are nine attributes, we plot a total of nine figures in a 3-by-3 grid, where the top-left figure shows the histograms for attribute 'A0' and the bottom-right 'A8'.
+    In each figure, you show histograms of instances of class 0 and those of class 1 using {\tt pyplot.hist([Xa, Xb], bins=15)}, where {\tt Xa} corresponds to instances of class 0 and {\tt Xb} to those of class 1, and you set the number of bins to 15. Use grid lines.
+    Based on the results you obtain, discuss and explain your findings.
+  } \label{Q1.1}
+
+
+  \begin{answerbox}{0.78\textheight}
+    Your Answer Here
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% --------------->
+
+% <---------------
+% Q1.2
+\begin{subquestion}{(9 points)
+    Calculate the correlation coefficient between each attribute of {\tt Xtrn} and the label {\tt Ytrn}, so that you calculate nine correlation coefficients. Answer the following questions.
+  }
+  \begin{enumerate}\NARROWITEM
+  \item Report the correlation coefficients in a table.
+  \item Discuss if it is a good idea to use the attributes that have large
+    correlations with the label for classification tasks.
+  \item Discuss if it is a good idea to ignore the attributes that have small correlations with the label for classification tasks.
+  \end{enumerate}
+
+
+  \begin{answerbox}{25em}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \item Your Answer for (c) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <---------------
+
+% --------------->
+% Q1.3
+\begin{subquestion}{(4 points)
+    We consider a set of instances of two variables, $\{(u_i, v_i)\}_{i=1}^N$,
+    where $N$ denotes the number of instances.
+    Show (using your own words and mathematical expressions) that the correlation coefficient between the two variables, $r_{uv}$, is translation invariant and scale invariant,
+    i.e. $r_{uv}$ does not change under linear transformation, $a + bu_i$ and $c + dv_i$ for $i=1,\ldots,N$, where $a,b,c,d$ are constants and $b>0, d>0$.
+    }
+
+
+  \begin{answerbox}{0.4\textheight}
+    Your Answer Here
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <---------------
+
+% --------------->
+% Q1.4
+\begin{subquestion}{(5 points)
+    Calculate the unbiased sample variance of each attribute of {\tt Xtrn}, and sort the variances in decreasing order. Answer the following questions.
+  }\label{q1:variance}
+  \begin{enumerate}\NARROWITEM
+  \item Report the sum of all the variances.
+  \item Plot the following two graphs side-by-side. Use grid lines in each plot.
+    \begin{itemize}\NARROWITEM
+    \item A graph of the amount of variance explained by each of the (sorted) attributes, where you indicate attribute numbers on the x-axis.
+    \item A graph of the cumulative variance ratio against the number of attributes, where the range of y-axis should be [0, 1].
+    \end{itemize}
+  \end{enumerate}
+
+
+  \begin{answerbox}{0.5\textheight}
+    \begin{enumerate}
+    \item Your Answer Here for (a)
+    \item Your Answer Here for (b)
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <---------------
+
+% --------------->
+% Q1.5
+\begin{subquestion}{(8 points)
+    Apply Principal Component Analysis (PCA) to {\tt Xtrn}, where you should not rescale {\tt Xtrn}.
+    Use Sklearn's PCA with default parameters, i.e. specifying no parameters.
+  }\label{q1:pca:wo/s}
+  \begin{enumerate}\NARROWITEM
+  \item Report the total amount of unbiased sample variance explained by the whole set of principal components.
+  \item Plot the following two graphs side-by-side. Use grid lines in each plot.
+    \begin{itemize}\NARROWITEM
+    \item A graph of the amount of variance explained by each of the principal components.
+    \item A graph of the cumulative variance ratio, where the range of y-axis should be [0, 1].
+    \end{itemize}
+  \item Mapping all the instances in {\tt Xtrn} on to the 2D space spanned with the first two principal components, and plot a scatter graph of the instances on the space, where instances of class 0 are displayed in blue and those of class 1 in red. Use grid lines. Note that the mapping should be done directly using the eigen vectors obtained in PCA - you should not use Sklearn's functions, e.g. {\tt transform()}. 
+  \item Calculate the correlation coefficient between each attribute and each of the first and second principal components, report the result in a table.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.5\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  \clearpage
+  ({\it continued from the previous page for Q\ref{q1:pca:wo/s}})
+  \begin{answerbox}{0.6\textheight}
+    \begin{enumerate}\setcounter{enumi}{2}
+    \item Your Answer for (c) Here
+    \item Your Answer for (d) Here
+    \end{enumerate}
+  \end{answerbox}
+    
+
+
+\end{subquestion}
+% <---------------
+
+% --------------->
+% Q1.6
+\begin{subquestion}{(4 points) % 
+    We now standardise the data by mean and standard deviation using the method described below, and look into how the standardisation has impacts on PCA.
+  }\label{q1:pca:w/s}
+  Create the standardised training data {\tt Xtrn\_s} and test data {\tt Xtst\_s} in your code in the following manner.
+  \begin{lstlisting}
+    from sklearn.preprocessing import StandardScaler
+    scaler = StandardScaler().fit(Xtrn)
+    Xtrn_s = scaler.transform(Xtrn)     # standardised training data
+    Xtst_s = scaler.transform(Xtst)     # standardised test data
+   \end{lstlisting}
+   Using the standardised data {\tt Xtrn\_s} instead of {\tt Xtrn}, 
+   answer the questions (a), (b), (c), and (d) in \ref{q1:pca:wo/s}.
+
+
+  \begin{answerbox}{0.5\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  \clearpage
+  ({\it continued from the previous page for Q\ref{q1:pca:w/s}})
+  \begin{answerbox}{0.6\textheight}
+    \begin{enumerate}\setcounter{enumi}{2}
+    \item Your Answer for (c) Here
+    \item Your Answer for (d) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <---------------
+
+% --------------->
+% Q1.7
+\begin{subquestion}{(7 points)
+    Based on the results you obtained in \ref{q1:variance}, \ref{q1:pca:wo/s}, and \ref{q1:pca:w/s}, answer the following questions.
+  }
+  \begin{enumerate}\NARROWITEM
+  \item Comparing the results of \ref{q1:variance} and \ref{q1:pca:wo/s}, discuss and explain your findings.
+  \item Comparing the results of \ref{q1:pca:wo/s} and \ref{q1:pca:w/s}, discuss and explain your findings and discuss ({\em using your own words}) whether you are strongly advised to standardise this particular data set before PCA.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.35\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+  
+\end{subquestion}
+% <-------------
+
+% ------------->
+% Q1.8
+\begin{subquestion}{(12 points)
+    We now want to run experiments on Support Vector Machines (SVMs) with a RBF kernel, where we try to optimise the penalty parameter $C$.
+    By using 5-fold CV on the standardised training data {\tt Xtrn\_s} described above, estimate the classification accuracy, while you vary the penalty parameter $C$ in the range 0.01 to 100 - use 13 values spaced equally in log space, where the logarithm base is 10.
+    Use Sklearn's {\tt SVC} and {\tt StratifiedKFold} with default parameters unless specified. Do not shuffle the data.
+  } \label{q1:svm}
+  Answer the following questions.
+  \begin{enumerate}\NARROWITEM
+  \item Calculate the mean and standard deviation of cross-validation classification accuracy for each $C$, and plot them against $C$ by using a log-scale for the x-axis, where standard deviations are shown with error bars.
+    On the same figure, plot the same information (i.e. the mean and standard deviation of classification accuracy) for the training set in the cross validation.
+  \item Comment (in brief) on any observations. 
+  \item Report the highest mean cross-validation accuracy and the value of $C$ which yielded it.
+  \item Using the best parameter value you found, evaluate the corresponding best classifier on the test set \SET{ {\tt Xtst\_s}, {\tt Ytst} }. Report the number of instances correctly classified and classification accuracy.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.65\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \item Your Answer for (c) Here
+    \item Your Answer for (d) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <-------------
+
+% Q1.9
+% ------------->
+\begin{subquestion}{(5 points)
+    We here consider a two-dimensional (2D) Gaussian distribution for
+    a set of two-dimensional vectors, which we form by 
+    selecting a pair of attributes, A4 and A7, in {\tt Xtrn} (NB: not {\tt Xtrn\_s}) whose label is 0.
+    To make the distribution of data simpler, we ignore the instances whose A4 value is less than 1. 
+    Save the resultant set of 2D vectors to a Numpy array, {\tt Ztrn}, where the first dimension corresponds to A4 and the second to A7.
+    You will find 318 instances in {\tt Ztrn}.
+  } \label{q1:2d-gaussian}
+  Using Numpy's libraries, estimate the sample mean vector and unbiased sample covariance matrix of a 2D Gaussian distribution for {\tt Ztrn}. Answer the following questions.
+  \begin{enumerate}\NARROWITEM
+  \item Report the mean vector and covariance matrix of the Gaussian distribution.
+
+  \item Make a scatter plot of the instances and display the contours of the estimated distribution on it using Matplotlib's contour.
+    Note that the first dimension of {\tt Ztrn} should correspnd to the x-axis
+    and the second to y-axis. Use the same scaling (i.e. equal aspect) for the x-axis and y-axis, and show grid lines.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.6\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <---------------
+
+% --------------->
+% Q1.10
+\begin{subquestion}{(7 points)
+    Assuming naive-Bayes, estimate the model parameters of a 2D Gaussian distribution for the data {\tt Ztrn} you created in \ref{q1:2d-gaussian}, and answer the following questions.
+  } \label{q1:2d-gaussina:nv}
+  \begin{enumerate}\NARROWITEM
+  \item Report the sample mean vector and unbiased sample covariance matrix of the Gaussian distribution. 
+  \item Make a new scatter plot of the instances in {\tt Ztrn} and display the contours of the estimated distribution on it.
+    Note that you should always correspond the first dimension of {\tt Ztrn} to x-axis and the second dimension to y-axis. Use the same scaling (i.e. equal aspect) for x-axis and y-axis, and show grid lines.
+
+  \item Comparing the result with the one you obtained in \ref{q1:2d-gaussian}, discuss and explain your findings, and discuss if it is a good idea to employ the naive Bayes assumption for this data {\tt Ztrn}.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.75\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \item Your Answer for (c) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <-------------
+
+
+% ------------->
+% Q1.11
+\begin{subquestion}{(10 points)
+    We now consider classification with logistic regression, for which we use the standardised training data {\tt Xtrn\_s} created in \ref{q1:pca:w/s}.
+    Use Sklearn's {\tt LogisticRegression} with default parameters except for specifying '{\tt max\_iter=1000}' and '{\tt random\_state=0}'.
+    Use Sklearn's {\tt StratifiedKFold} with default parameters. Do not shuffle the data.
+  } 
+  \begin{enumerate}\NARROWITEM
+  \item Using 5-fold CV on the training set, report the mean and standard deviation of cross-validation accuracy.
+  \item We consider a simple feature selection that chooses eight attributes out of the nine, i.e. dropping a single attribute. Using 5-fold CV on the training set, for each choice of attribute to drop, report the mean and standard deviation of cross-validation accuracy in a table, and report the attribute which gave the highest mean cross-validation accuracy when it was omitted.
+  \item Discuss and explain your findings.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.5\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \item Your Answer for (c) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <-------------
+
+\end{question}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%============================================================================%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+%
+% Question 2
+% 
+\newcommand{\qTwoTitle}{Experiments on an image data set of handwritten letters}
+%
+
+  \begin{question}{(90 total points) \qTwoTitle}
+
+
+
+%
+% Question 2  
+%
+\medskip
+% ------------------------->
+% Q2.1
+\begin{subquestion}{(5 points)
+  } \label{q2.1}
+  \begin{enumerate}\NARROWITEM
+  \item Report (using a table) the minimum, maximum, mean, and standard deviation of pixel values for each {\tt Xtrn} and {\tt Xtst}.
+    (Note that we mean a single value of each of min, max, etc.\ for each {\tt Xtrn} and {\tt Xtst}.)
+  \item Display the gray-scale images of the first two instances in {\tt Xtrn} properly, clarifying the class number for each image.
+    The background colour should be white and the foreground colour black.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.55\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <-------------------------- 
+
+% -------------------------->
+% Q2.2
+\begin{subquestion}{(4 points)
+  } \label{q2.2}
+  \begin{enumerate}\NARROWITEM
+  \item {\tt Xtrn\_m} is a mean-vector subtracted version of {\tt Xtrn}.
+    Discuss if the Euclidean distance between a pair of instances in {\tt Xtrn\_m} is the same as that in {\tt Xtrn}.
+  \item {\tt Xtst\_m} is a mean-vector subtracted version of {\tt Xtst}, where the mean vector of {\tt Xtrn} was employed in the subtraction instead of the one of {\tt Xtst}.
+    Discuss whether we should instead use the mean vector of {\tt Xtst} in the subtraction.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.5\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <--------------------------
+
+% -------------------------->
+% Q2.3
+\begin{subquestion}{(7 points)
+    Apply \kmeans clustering to the instances of each of class $0,5,8$ (i.e. 'A', 'F', 'I') in {\tt Xtrn} with $k = 3,5$, for which use Sklearn's {\tt KMeans} with {\tt n\_clusters=}$k$ and {\tt random\_state=0} while using default values for the other parameters. Note that you should apply the clustering to each class separately. Make sure you use {\tt Xtrn} rather than {\tt Xtrn\_m}.
+    Answer the following questions.
+  }
+  \begin{enumerate}\NARROWITEM
+  \item Display the images of cluster centres for each $k$, so that you show two plots, one for $k=3$  and the other for $k=5$. Each plot displays the grayscale images of cluster centres in a 3-by-$k$ grid, where each row corresponds to a class and each column to cluster number, so that the top-left grid item corresponds to class 0 and the first cluster, and the bottom-right one to class 8 and the last cluster.
+  \item Discuss and explain your findings, including discussions if there are any concerns of using this data set for classification tasks.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.75\textheight}
+    \begin{enumerate}
+    \item Your Answer (a) Here
+    \item Your Answer (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <--------------------------
+
+% -------------------------->
+% Q2.4
+\begin{subquestion}{(5 points)
+    Explain (using your own words) why the sum of square error (SSE) in \kmeans clustering does not increase for each of the following cases.
+  }
+  \begin{enumerate}\NARROWITEM
+  \item Clustering with $k+1$ clusters compared with clustering with $k$ clusters.
+  \item The update step at time $t+1$ compared with the update step at time $t$ when clustering with $k$ clusters.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.55\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <--------------------------
+
+% -------------------------->
+% Q2.5
+\begin{subquestion}{(11 points)
+    Here we apply multi-class logistic regression classification to the data. You should use Sklearn's {\tt LogisticRegression} with parameters '{\tt max\_iter=1000}' and '{\tt random\_state=0}' while use default values for the other parameters.
+    Use {\tt Xtrn\_m} for training and {\tt Xtst\_m} for testing. We do not employ cross validation here.
+    Carry out a classification experiment.
+  }\label{q2:LR}
+  \begin{enumerate}\NARROWITEM
+  \item Report the classification accuracy for each of the training set and test set. 
+  \item Find the top five classes that were misclassified most in the test set. You should provide the class numbers, corresponding alphabet letters (e.g. A,B,$\ldots$), and the numbers of misclassifications.
+  \item For each class that you identified in the above, make a quick investigation and explain possible reasons for the misclassifications.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.7\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \item Your Answer for (c) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <-------------------------
+
+% ------------------------->
+% Q2.6
+\begin{subquestion}{(20 points)
+    Without changing the learning algorithm (i.e. use logistic regression), your task here is to improve the classification performance of the model in \ref{q2:LR}.
+    Any training and optimisation (e.g. hyper parameter tuning) should be done within the training set only.
+    Answer the following questions.
+  }\label{q2:LR2}
+  \begin{enumerate}\NARROWITEM
+  \item Discuss (using your own wards) three possible approaches to improve classification accuracy, decide which one(s) to implement, and report your choice.
+  \item Briefly describe your implemented approach/algorithm so that other people can understand it without seeing your code. If any optimisation (e.g. parameter searching) is involved, clarify and describe how it was done.
+  \item Carry out experiments using the new classification system, and report the results, including results of parameter optimisation (if any) and classification accuracy for the test set. Comments on the results.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.7\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  \clearpage
+  ({\it continued from the previous page for Q\ref{q2:LR2}})
+  \begin{answerbox}{0.95\textheight}
+    \begin{enumerate}\setcounter{enumi}{2}
+    \item Your Answer for (c) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <-------------------------- 
+
+% -------------------------->
+% Q2.7
+\begin{subquestion}{(9 points)
+    Using the training data of class 0 ('A') from the training set {\tt Xtrn\_m}, calculate the sample mean vector, and unbiased sample covariance matrix using Numpy's functions, and answer the following.
+  } \label{q2:gaussian-1}
+  \begin{enumerate}\NARROWITEM
+  \item Report the minimum, maximum, and mean values of the elements of the covariance matrix.
+  \item Report the minimum, maximum, and mean values of the diagonal elements of the covariance matrix.
+  \item Show the histogram of the diagonal values of the covariance matrix. Set the number of bins to 15, and use grid lines in your plot.
+  \item Using Scipy's {\tt multivariate\_normal} with the mean vector and covariance matrix you obtained, try calculating the likelihood of the first element of class 0 in the test set ({\tt Xtst\_m}). You will receive an error message. Report the main part of error message, i.e. the last line of the message, and explain why you received the error, clarifying the problem with the data you used.
+  \item Discuss (using your own words) three possible options you would employ to avoid the error. Note that your answer should not include using a different data set. 
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.65\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \item Your Answer for (c) Here
+    \end{enumerate}
+  \end{answerbox}
+  \clearpage
+  ({\it continued from the previous page for Q\label{q2:gaussian-1}})
+  \begin{answerbox}{0.5\textheight}
+    \begin{enumerate}\setcounter{enumi}{3}
+    \item Your Answer for (d) Here
+    \item Your Answer for (e) Here
+    \end{enumerate}
+  \end{answerbox}
+
+  
+
+\end{subquestion}
+% ----------------->
+
+% <-----------------
+% Q 2.8
+\begin{subquestion}{(8 marks)
+    Instead of Scipy's {\tt multivariate\_normal} we used in \ref{q2:gaussian-1}, we now use Sklearn's {\tt GaussianMixture} with parameters, {\tt n\_components=1, covariance\_type='full'},
+    so that there is a single Gaussian distribution fitted to the data.
+    Use \SET{ {\tt Xtrn\_m}, {\tt Ytrn} } as the training set and \SET{ {\tt Xtst\_m}, {\tt Ytst} } as the test set.
+  } \label{q2:gaussian-2}
+  \begin{enumerate}\NARROWITEM
+  \item Train the model using the data of class 0 ('A') in the training set, and report  the log-likelihood of the first instance in the test set with the model. Explain why you could calculate the value this time.
+  \item We now carry out a classification experiment considering all the 26 classes, for which we assign a separate Gaussian distribution to each class.
+    Train the model for each class on the training set, run a classification experiment using a multivariate Gaussian classifier, and report the number of correctly classified instances and classification accuracy for each training set and test set. 
+  \item Briefly comment on the result you obtained.
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.6\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \item Your Answer for (c) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <------------------------- 
+
+% ------------------------->
+% Q2.9
+\begin{subquestion}{(6 points)
+    Answer the following question on Gaussian Mixture Models (GMMs).
+  } \label{q2:gmm-1}
+  \begin{enumerate}\NARROWITEM
+  \item Explain (using your own words) why Maximum Likelihood Estimation (MLE) cannot be applied to the training of GMMs directly.
+  \item The Expectation Maximisation (EM) algorithm is normally used for the training of GMMs, but another training algorithm is possible, in which you employ \kmeans clustering to split the training data into clusters and apply MLE to estimate model parameters of a Gaussian distribution for each cluster. Explain the difference between the two algorithms in terms of parameter estimation of GMMs.
+    \end{enumerate}
+   
+
+  \begin{answerbox}{0.6\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here
+    \item Your Answer for (b) Here
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <-------------------------
+
+
+% ------------------------->
+% Q2.10
+\begin{subquestion}{(15 points)
+    We now extend the classification with a separate multivariate Gaussian model for each class that we performed in \ref{q2:gaussian-2} to one with Gaussian Mixture Model (GMM) per class. To achive this, change the number of mixture components in Sklearn's {\tt GaussianMixture}. 
+    To simplify the experiment, do not use cross validation, but instead use the test set as a validation set.
+    Use {\tt random\_state=0} when you call Sklearn's {\tt GaussianMixture}.
+  }
+  \begin{enumerate}\NARROWITEM
+  \item Run experiments with GMMs for $k = 1,2,4,8$ (where $k$ is the number of mixture components).
+    \begin{enumerate}\NARROWITEM
+    \item Report classification accuracy for each of the training set and test set in a single table.
+    \item Describe and briefly explain your findings.
+    \end{enumerate}
+  \item Using GMMs with $k=2$, optimise the parameter '{\tt reg\_covar}' for the test set.
+    \begin{enumerate}\NARROWITEM
+    \item Report the result, i.e. the highest test-set accuracy and the value of the parameter value of {\tt reg\_covar} that yields it.
+    \item Briefly discuss the '{\tt reg\_covar}' parameter in the context of this data set.
+    \end{enumerate}
+  \end{enumerate}
+   
+
+  \begin{answerbox}{0.65\textheight}
+    \begin{enumerate}
+    \item Your Answer for (a) Here\hfill
+      \begin{enumerate}
+      \item 
+      \item 
+      \end{enumerate}
+    \item  Your Answer for (b) Here\hfill
+      \begin{enumerate}
+      \item 
+      \item 
+      \end{enumerate}
+    \end{enumerate}
+  \end{answerbox}
+  
+
+
+\end{subquestion}
+% <-------------------------- 
+
+\end{question}
+\end{document}

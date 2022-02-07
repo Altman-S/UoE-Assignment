@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="546.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ippo.assignment1.library.view.MenuView">
+   <children>
+      <HBox alignment="CENTER" layoutY="29.0" prefHeight="378.0" prefWidth="546.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="378.0" fitWidth="546.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+      <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu fx:id="subjectMenu" mnemonicParsing="false" text="Subject" />
+        </menus>
+      </MenuBar>
+      <Label id="message" fx:id="captionLabel" layoutX="-9.0" layoutY="428.0" text="" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="errorLabel" alignment="TOP_LEFT" layoutX="20.0" layoutY="129.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="506.0" />
+      <ImageView fx:id="iconView" fitHeight="64.0" fitWidth="64.0" layoutX="30.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

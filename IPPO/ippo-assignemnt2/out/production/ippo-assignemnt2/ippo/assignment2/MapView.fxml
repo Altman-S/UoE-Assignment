@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ippo.assignment2.Controller">
+   <children>
+      <HBox prefHeight="32.0" prefWidth="600.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="1.0">
+         <children>
+            <Label prefHeight="32.0" prefWidth="81.0" text="Your position:  " />
+            <Label prefHeight="32.0" prefWidth="58.0" text="Location:" textFill="#d00e0e" />
+            <Label fx:id="labelLocation" prefHeight="32.0" prefWidth="77.0" />
+            <Label prefHeight="32.0" prefWidth="66.0" text="Direction:" textFill="#30d713" />
+            <Label fx:id="labelDirection" prefHeight="32.0" prefWidth="92.0" />
+            <Label fx:id="labelWarning" prefHeight="32.0" prefWidth="217.0" textFill="#dd1919" />
+         </children>
+      </HBox>
+      <ImageView fx:id="imageView" fitHeight="384.0" fitWidth="512.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+      <Pane layoutY="429.0" prefHeight="37.0" prefWidth="549.0" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <Label layoutX="7.0" layoutY="1.0" prefHeight="35.0" prefWidth="60.0" text="Direction" textFill="#22b556">
+               <padding>
+                  <Insets left="2.0" />
+               </padding>
+            </Label>
+            <Button layoutX="67.0" layoutY="5.0" mnemonicParsing="false" onAction="#northDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="North" />
+            <Button layoutX="123.0" layoutY="5.0" mnemonicParsing="false" onAction="#southDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="South" />
+            <Button layoutX="178.0" layoutY="5.0" mnemonicParsing="false" onAction="#westDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="West" />
+            <Button layoutX="233.0" layoutY="5.0" mnemonicParsing="false" onAction="#eastDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="East" />
+            <Button layoutX="288.0" layoutY="5.0" mnemonicParsing="false" onAction="#downDirectionClicked" prefHeight="27.0" prefWidth="52.0" text="Down" />
+            <Label layoutX="343.0" layoutY="5.0" prefHeight="27.0" prefWidth="201.0" text="Note: You can only put down 4 icons" textFill="#12e1d6" />
+         </children>
+      </Pane>
+      <VBox layoutX="481.0" layoutY="35.0" prefHeight="287.0" prefWidth="118.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label prefHeight="36.0" prefWidth="92.0" text="move Location" textFill="#c92712">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Label>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#northLocationClicked" prefHeight="27.0" prefWidth="55.0" text="North">
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </Button>
+            <HBox prefHeight="27.0" prefWidth="125.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#westLocationClicked" prefHeight="27.0" prefWidth="55.0" text="West">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#eastLocationClicked" prefHeight="27.0" prefWidth="55.0" text="East">
+                     <HBox.margin>
+                        <Insets left="6.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#southLocationClicked" prefHeight="27.0" prefWidth="55.0" text="South">
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </Button>
+            <Label prefHeight="22.0" prefWidth="116.0" />
+            <Label prefHeight="21.0" prefWidth="116.0" text="Press button to start" textFill="#c916bd" />
+            <Button mnemonicParsing="false" onAction="#startClicked" text="Start">
+               <VBox.margin>
+                  <Insets left="35.0" />
+               </VBox.margin>
+            </Button>
+            <Label prefHeight="17.0" prefWidth="116.0" />
+            <Label prefHeight="25.0" prefWidth="116.0" text="Dog, Panda or Rabbit" />
+            <TextField fx:id="textIconType" promptText="Put Down What?" />
+            <MenuBar prefHeight="24.0" prefWidth="116.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="move item">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#pickUpClicked" text="pick up" />
+                        <MenuItem mnemonicParsing="false" onAction="#putDownClicked" text="put down" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+      <ImageView fx:id="iconView" fitHeight="150.0" fitWidth="150.0" layoutX="172.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="555.0" layoutY="412.0" prefHeight="27.0" prefWidth="92.0" text="Num of icons left" AnchorPane.rightAnchor="5.0" />
+      <Label fx:id="labelNumIcon" layoutX="589.0" layoutY="431.0" prefHeight="25.0" prefWidth="30.0" text="num" textFill="#e10a0a" AnchorPane.rightAnchor="33.0" />
+      <ImageView fx:id="mapView" fitHeight="87.0" fitWidth="118.0" layoutX="534.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" />
+   </children>
+</AnchorPane>

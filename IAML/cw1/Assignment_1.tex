@@ -1,0 +1,195 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                IAML 2021 Assignment 1                %
+%                                                      %
+%                                                      %
+% Authors: Oisin Mac Aodha and Octave Mariotti         %
+% Using template from: Michael P. J. Camilleri and     %
+% Traiko Dinev.                                        %
+%                                                      %
+% Based on the Cleese Assignment Template for Students %
+% from http://www.LaTeXTemplates.com.                  %
+%                                                      %
+% Original Author: Vel (vel@LaTeXTemplates.com)        %
+%                                                      %
+% License:                                             %
+% CC BY-NC-SA 3.0                                      %
+% (http://creativecommons.org/licenses/by-nc-sa/3.0/)  %
+%                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%--------------------------------------------------------
+%   IMPORTANT: Do not touch anything in this part
+\documentclass[12pt]{article}
+\input{style.tex}
+% Options for Formatting Output
+\global\setbool{clearon}{true} %
+\global\setbool{authoron}{true} %
+\ifbool{authoron}{\rhead{\small{\assignmentAuthorName}}\cfoot{\small{\assignmentAuthorName}}}{\rhead{}}
+
+
+\newcommand{\assignmentQuestionName}{Question}
+\newcommand{\assignmentTitle}{Assignment\ \#1}
+
+\newcommand{\assignmentClass}{IAML -- INFR11182 (LEVEL 11)}
+
+\newcommand{\assignmentWarning}{NO LATE SUBMISSIONS} % 
+\newcommand{\assignmentDueDate}{Monday,\ October\ 18,\ 2021 @ 16:00}
+%--------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% NOTE: YOU NEED TO ENTER YOUR STUDENT ID BELOW.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------------------------------------------------------
+% IMPORTANT: Specify your Student ID below. You will need to uncomment the line, else compilation will fail. Make sure to specify your student ID correctly, otherwise we may not be able to identify your work and you will be marked as missing.
+%\newcommand{\assignmentAuthorName}{s1234567}
+%--------------------------------------------------------
+
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%============================================================================%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+\begin{question}{Linear Regression}
+
+\questiontext{We will fit linear regression models to the data in file \texttt{regression\_part1.csv}.}
+\begin{subquestion}{Describe the main properties of the data, focusing on the size, data ranges, and data types.}
+
+\begin{answerbox}{10em}
+Your Answer Here
+\end{answerbox}
+
+
+
+\end{subquestion}
+
+
+
+
+%
+%
+\begin{subquestion}{Fit a linear model to the data so that we can predict \texttt{exam\_score} from \texttt{revision\_time}. 
+Report the estimated model parameters $\mathbf{w}$. 
+Describe what the parameters represent for this 1D data. 
+For this part, you should use the sklearn implementation of \href{https://scikit-learn.org/0.19/modules/generated/sklearn.linear_model.LinearRegression.html}{Linear Regression}.\\
+\hint{By default in sklearn \texttt{fit\_intercept = True}. Instead, set \texttt{fit\_intercept = False} and pre-pend $1$ to each value of $x_i$ yourself to create $\boldsymbol{\phi}(x_i) = [1, x_i]$. 
+}
+}
+
+
+\begin{answerbox}{10em}
+Your Answer Here
+\end{answerbox}
+
+
+
+\end{subquestion}
+
+
+
+%
+%
+\begin{subquestion}{Display the fitted linear model and the input data on the same plot.
+}
+
+
+\begin{answerbox}{35em}
+Your Answer Here
+\end{answerbox}
+
+
+
+\end{subquestion}
+
+
+
+%
+%
+\begin{subquestion}{Instead of using sklearn, implement the closed-form solution for fitting a linear regression model yourself using numpy array operations.  
+Report your code in the answer box.
+It should only take a few lines (i.e. <5).\\ 
+\hint{Only report the relevant lines for estimating $\mathbf{w}$ e.g. we do not need to see the data loading code. You can write the code in the answer box directly or paste in an image of it. }
+}
+
+
+\begin{answerbox}{20em}
+Your Answer Here
+\end{answerbox}
+
+
+
+\end{subquestion}
+
+
+
+%
+%
+\begin{subquestion}{Mean Squared Error (MSE) is a common metric used for evaluating the performance of regression models. 
+Write out the expression for MSE and list one of its limitations. \\
+\hint{For notation, you can use $y$ for the ground truth quantity and $\hat{y}$ (\texttt{\$\textbackslash{}hat\{y\}\$} in latex) in place of the model prediction.}
+}
+
+
+\begin{answerbox}{10em}
+Your Answer Here
+\end{answerbox}
+
+
+
+\end{subquestion}
+
+
+ 
+%
+%
+\begin{subquestion}{Our next step will be to evaluate the performance of the fitted models using Mean Squared Error (MSE). 
+Report the MSE of the data in \texttt{regression\_part1.csv} for your prediction of \texttt{exam\_score}.
+You should report the MSE for the linear model fitted using sklearn and the model resulting from your closed-form solution. 
+Comment on any differences in their performance. 
+}
+
+
+\begin{answerbox}{10em}
+Your Answer Here
+\end{answerbox}
+
+
+
+\end{subquestion}
+
+
+
+
+
+
+\begin{subquestion}{Assume that the optimal value of $w_0$ is $20$, it is not but let's assume so for now. 
+Create a plot where you vary $w_1$ from $-2$ to $+2$ on the horizontal axis, and report the Mean Squared Error on the vertical axis for each setting of $\mathbf{w} = [w_0, w_1]$ across the dataset. 
+Describe the resulting plot. Where is its minimum? Is this value to be expected?\\ 
+\hint{You can try 100 values of $w_1$ i.e. \texttt{w1 = np.linspace(-2,2, 100)}.}
+}
+
+
+\begin{answerbox}{35em}
+Your Answer Here
+\end{answerbox}
+
+
+
+\end{subquestion}
+
+
+
+ 
+\end{question}
+
+
+
+
+
+
+\end{document}
