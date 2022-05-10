@@ -16,7 +16,7 @@
 [debug] == resolving dependencies for default#imdb-build;0.1-SNAPSHOT [provided]
 [debug] == resolving dependencies default#imdb-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.5 [provided->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.10.5 ...
-[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@698f92b7
+[debug] sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@67ddc8d6
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.5
 [debug] 	found org.scala-lang#scala-library;2.10.5 in sbt-chain
 [debug] 	[2.10.5] org.scala-lang#scala-library;2.10.5
@@ -2214,60 +2214,14 @@
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#jline;2.10.5 [optional->master(*)]
 [info] Resolving org.scala-lang#jline;2.10.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-lang#jline;2.10.5 {optional=[compile(*), master(*)]}
-[info] Resolving org.scala-lang#jline;2.10.5 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.scala-lang#jline;2.10.5 {optional=[compile(*), master(*)]}
-[debug] 		tried https://repo.typesafe.com/typesafe/ivy-releases/org.scala-lang/jline/2.10.5/ivys/ivy.xml
-[debug] CLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.scala-lang/jline/2.10.5/ivys/ivy.xml
-[debug] 	typesafe-ivy-releases: no ivy file found for org.scala-lang#jline;2.10.5
-[debug] 		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.scala-lang/jline/2.10.5/ivys/ivy.xml
-[debug] CLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.scala-lang/jline/2.10.5/ivys/ivy.xml
-[debug] 	sbt-plugin-releases: no ivy file found for org.scala-lang#jline;2.10.5
-[debug] 		tried /Users/altman/.ivy2/local/org.scala-lang/jline/2.10.5/ivys/ivy.xml
-[debug] 	local: no ivy file found for org.scala-lang#jline;2.10.5
-[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.pom
-[debug] 	public: found md file for org.scala-lang#jline;2.10.5
-[debug] 		=> https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.pom (2.10.5)
-[debug] downloading https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.pom
-[debug] 	[SUCCESSFUL ] org.scala-lang#jline;2.10.5!jline.pom(pom.original) (126ms)
-[debug] 		tried https://repo.typesafe.com/typesafe/ivy-releases/org.scala-lang/jline/2.10.5/jars/jline.jar
-[debug] CLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.scala-lang/jline/2.10.5/jars/jline.jar
-[debug] 		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.scala-lang/jline/2.10.5/jars/jline.jar
-[debug] CLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.scala-lang/jline/2.10.5/jars/jline.jar
-[debug] 		tried /Users/altman/.ivy2/local/org.scala-lang/jline/2.10.5/jars/jline.jar
-[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.jar
-[debug] 	found org.scala-lang#jline;2.10.5 in public
+[debug] sbt-chain: module revision found in cache: org.scala-lang#jline;2.10.5
+[debug] 	found org.scala-lang#jline;2.10.5 in sbt-chain
 [debug] == resolving dependencies org.scala-lang#scala-compiler;2.10.5->org.scala-lang#jline;2.10.5 [optional->compile(*)]
 [debug] == resolving dependencies org.scala-lang#jline;2.10.5->org.fusesource.jansi#jansi;1.4 [compile->master(compile)]
 [info] Resolving org.fusesource.jansi#jansi;1.4 ...
 [debug] sbt-chain: Checking cache for: dependency: org.fusesource.jansi#jansi;1.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
-[info] Resolving org.fusesource.jansi#jansi;1.4 ...
-[debug] sbt-chain-delegate: Checking cache for: dependency: org.fusesource.jansi#jansi;1.4 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
-[debug] 		tried https://repo.typesafe.com/typesafe/ivy-releases/org.fusesource.jansi/jansi/1.4/ivys/ivy.xml
-[debug] CLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.fusesource.jansi/jansi/1.4/ivys/ivy.xml
-[debug] 	typesafe-ivy-releases: no ivy file found for org.fusesource.jansi#jansi;1.4
-[debug] 		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.fusesource.jansi/jansi/1.4/ivys/ivy.xml
-[debug] CLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.fusesource.jansi/jansi/1.4/ivys/ivy.xml
-[debug] 	sbt-plugin-releases: no ivy file found for org.fusesource.jansi#jansi;1.4
-[debug] 		tried /Users/altman/.ivy2/local/org.fusesource.jansi/jansi/1.4/ivys/ivy.xml
-[debug] 	local: no ivy file found for org.fusesource.jansi#jansi;1.4
-[debug] 		tried https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.pom
-[debug] 	public: found md file for org.fusesource.jansi#jansi;1.4
-[debug] 		=> https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.pom (1.4)
-[debug] downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.pom ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.pom
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.pom.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.pom
-[debug] 	[SUCCESSFUL ] org.fusesource.jansi#jansi;1.4!jansi.pom(pom.original) (94ms)
-[debug] 		tried https://repo.typesafe.com/typesafe/ivy-releases/org.fusesource.jansi/jansi/1.4/jars/jansi.jar
-[debug] CLIENT ERROR: Not Found url=https://repo.typesafe.com/typesafe/ivy-releases/org.fusesource.jansi/jansi/1.4/jars/jansi.jar
-[debug] 		tried https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.fusesource.jansi/jansi/1.4/jars/jansi.jar
-[debug] CLIENT ERROR: Not Found url=https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.fusesource.jansi/jansi/1.4/jars/jansi.jar
-[debug] 		tried /Users/altman/.ivy2/local/org.fusesource.jansi/jansi/1.4/jars/jansi.jar
-[debug] 		tried https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar
-[debug] 	found org.fusesource.jansi#jansi;1.4 in public
+[debug] sbt-chain: module revision found in cache: org.fusesource.jansi#jansi;1.4
+[debug] 	found org.fusesource.jansi#jansi;1.4 in sbt-chain
 [debug] == resolving dependencies org.scala-lang#jline;2.10.5->org.fusesource.jansi#jansi;1.4 [compile->compile(*)]
 [debug] == resolving dependencies default#imdb-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.5 [scala-tool->default]
 [debug] == resolving dependencies default#imdb-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.5 [scala-tool->runtime]
@@ -2330,19 +2284,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.9!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.9!apply-macro.jar
-[debug] 		tried https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.jar
-[info] downloading https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.jar ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.jar
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.jar.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/scala-lang/jline/2.10.5/jline-2.10.5.jar
-[info] 	[SUCCESSFUL ] org.scala-lang#jline;2.10.5!jline.jar (148ms)
-[debug] 		tried https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar
-[info] downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar ...
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar
-[debug] 	public: downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar.sha1
-[debug] sha1 OK for https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.4/jansi-1.4.jar
-[info] 	[SUCCESSFUL ] org.fusesource.jansi#jansi;1.4!jansi.jar (385ms)
-[debug] :: resolution report :: resolve 6749ms :: artifacts dl 542ms
+[debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.5!jline.jar
+[debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
+[debug] :: resolution report :: resolve 432ms :: artifacts dl 11ms
 [debug] 	report for default#imdb-build;0.1-SNAPSHOT compile produced in /Users/altman/Desktop/Assignment/EC/ec-cw1/imdb/project/target/resolution-cache/reports/default-imdb-build-compile.xml
 [debug] 	report for default#imdb-build;0.1-SNAPSHOT runtime produced in /Users/altman/Desktop/Assignment/EC/ec-cw1/imdb/project/target/resolution-cache/reports/default-imdb-build-runtime.xml
 [debug] 	report for default#imdb-build;0.1-SNAPSHOT test produced in /Users/altman/Desktop/Assignment/EC/ec-cw1/imdb/project/target/resolution-cache/reports/default-imdb-build-test.xml
@@ -2356,5 +2300,5 @@
 [debug] 	report for default#imdb-build;0.1-SNAPSHOT docs produced in /Users/altman/Desktop/Assignment/EC/ec-cw1/imdb/project/target/resolution-cache/reports/default-imdb-build-docs.xml
 [debug] 	report for default#imdb-build;0.1-SNAPSHOT pom produced in /Users/altman/Desktop/Assignment/EC/ec-cw1/imdb/project/target/resolution-cache/reports/default-imdb-build-pom.xml
 [debug] 	report for default#imdb-build;0.1-SNAPSHOT scala-tool produced in /Users/altman/Desktop/Assignment/EC/ec-cw1/imdb/project/target/resolution-cache/reports/default-imdb-build-scala-tool.xml
-[debug] 	resolve done (6749ms resolve - 542ms download)
+[debug] 	resolve done (432ms resolve - 11ms download)
 [info] Done updating.
