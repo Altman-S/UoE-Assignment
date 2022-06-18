@@ -1,0 +1,1 @@
+Q(AVG(y)) :- R(x, y, z), S(x, w, t)

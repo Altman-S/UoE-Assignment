@@ -1,0 +1,1 @@
+PRINT(str) :- USER(id, 'Administer'), INPUT(id, 'try weary in wordle'), INTPUT(id, str)

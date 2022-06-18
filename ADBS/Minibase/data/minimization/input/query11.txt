@@ -1,0 +1,1 @@
+STUDENTNAME(name) :- STUDENT(sid, name, 'INF'), ENROLLMENT(sid, cid), GRADE(cid, uid, semester, mark), ENROLLMENT(sid, 'ADBS'), GRADE('ADBS', x, 'MMXXII', g)
